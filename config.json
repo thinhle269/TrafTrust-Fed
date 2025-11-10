@@ -1,0 +1,28 @@
+{
+  "profile": "fast",
+
+  "profiles": {
+    "fast": {
+      "engine": "tf",
+      "data_file": "data\\metr_la.npy",
+      "coords_file": "data\\sensor_locations_la.csv",
+      "rounds": 1,
+      "clients": 1,
+      "input_steps": 12,
+      "local_epochs": 1,
+      "batch_size": 256,
+      "lr": 0.001
+    },
+    "official": {
+      "engine": "tf",
+      "data_file": "data\\metr_la.npy",
+      "coords_file": "data\\sensor_locations_la.csv",
+      "rounds": 25,
+      "clients": 8,
+      "input_steps": 12,
+      "local_epochs": 2,
+      "batch_size": 256,
+      "lr": 0.001
+    }
+  }
+}
