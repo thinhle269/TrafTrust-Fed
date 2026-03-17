@@ -1,5 +1,5 @@
 # File: trust.py
-# PHIÊN BẢN VÁ LỖI (HOTFIX): Giữ Class EMA MỚI + Thêm lại hàm CŨ (dummy)
+
 
 import numpy as np
 from .fuzzy.fis import SimpleMamdaniFIS
@@ -27,7 +27,7 @@ class FuzzyEMATrust:
     """
     Class này đóng gói logic Fuzzy-EMA (4-input, smoothed).
     """
-    def __init__(self, num_clients, alpha=0.7):
+    def __init__(self, num_clients, alpha):
         """
         Khởi tạo bộ lọc.
         """
@@ -103,9 +103,9 @@ class FuzzyEMATrust:
 
 def compute_trust_fuzzy(local_weights, global_weights, val_mae_list, grad_norm_list):
     """
-    HÀM GIẢ (DUMMY FUNCTION) - Chỉ để tương thích ngược (backward compatibility).
+    - Chỉ để tương thích ngược (backward compatibility).
     FedAvg/FedProx/FedTrim import hàm này (do lỗi import của train_fed.py) 
-    nhưng sẽ KHÔNG BAO GIỜ GỌI (CALL) nó.
+
     """
     print("CRITICAL WARNING: compute_trust_fuzzy (hàm CŨ) đã được gọi. Lỗi logic!")
     # Trả về một phân bổ đều (giống như FedAvg)
